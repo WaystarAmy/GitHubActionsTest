@@ -1,0 +1,22 @@
+name: My Workflow
+on: push
+
+jobs:
+  Job1:
+    runs-on: ubuntu-latest
+    steps: 
+      -name: Step 1
+        run: echo "::set-output name=today::$(date +'%Y-%m-%d')"
+  Job2:
+    runs-on: windows-latest
+      -name: Step 1
+        run: echo "::set-output name=today::$(date +'%Y-%m-%d')"
+  Job3:
+    runs-on: macos-latest
+      -name: Step 1
+        run: echo "::set-output name=today::$(date +'%Y-%m-%d')"
+  Job4: 
+    needs: [Job1, Job2, Job3]
+    runs-on: ubuntu-latest
+      -name: Step 1
+        run: echo "::set-output name=today::$(date +'%Y-%m-%d')"
