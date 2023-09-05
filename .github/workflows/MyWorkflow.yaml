@@ -7,16 +7,22 @@ jobs:
     steps: 
       - name: Step1
         run: echo "::set-output name=today::$(date +'%Y-%m-%d')"
+
   Job2:
     runs-on: windows-latest
+    steps:
       - name: Step1
         run: echo "::set-output name=today::$(date +'%Y-%m-%d')"
+
   Job3:
     runs-on: macos-latest
+    steps:
       - name: Step1
         run: echo "::set-output name=today::$(date +'%Y-%m-%d')"
+
   Job4: 
     needs: [Job1, Job2, Job3]
     runs-on: ubuntu-latest
+    steps:
       - name: Step1
         run: echo "::set-output name=today::$(date +'%Y-%m-%d')"
