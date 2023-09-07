@@ -9,10 +9,10 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v1
 
-      - name: Build ${{ env.FILE_NAME }} for ubuntu-lastest
+      - name: Build ${{ env.FILE_NAME }} for ubuntu-latest
         run: go build ${{ env.FILE_NAME }}.go
 
-      - name: Build ${{ env.FILE_NAME }} for windows-lastest
+      - name: Build ${{ env.FILE_NAME }} for windows-latest
         run: GOOS=windows GOARCH=amd64 go build ${{ env.FILE_NAME }}.go
 
       - name: Upload artifact for linux
